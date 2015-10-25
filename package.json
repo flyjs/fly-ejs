@@ -1,0 +1,43 @@
+{
+  "name": "fly-ejs",
+  "version": "0.1.0",
+  "description": "A plugin for Fly that parses ejs template files",
+  "keywords": [
+    "fly",
+    "fly-plugin"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "*.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "fly test"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "co": "^4.6.0",
+    "co-fs": "^1.2.0",
+    "fly": "^0.8.3",
+    "fly-eslint": "^1.0.0",
+    "fly-mocha": "^0.4.1"
+  },
+  "dependencies": {
+    "ejs": "^2.3.4"
+  },
+  "author": {
+    "name": "Pine Mizune",
+    "email": "pinemz@gmail.com",
+    "url": "https://github.com/pine613"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pine613/fly-ejs"
+  },
+  "bugs": {
+    "url": "https://github.com/pine613/fly-ejs/issues"
+  },
+  "homepage": "https://github.com/pine613/fly-ejs",
+  "license": "MIT"
+}
