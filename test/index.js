@@ -14,7 +14,7 @@ describe('index', () => {
           try {
             const actual = transform(data, { title: 'fly-ejs' })
             expect(name).to.equal('ejs')
-            expect(actual).to.equal(expected.toString())
+            expect(actual).to.deep.equal({ css: expected.toString(), ext: '.html' })
             done()
           }
           catch (e) { done(e) }
