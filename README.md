@@ -18,7 +18,7 @@
 This plugin requires [fly](https://github.com/bucaran/fly).
 
 ```sh
-$ npm i fly-vimlint -D
+$ npm i fly-ejs -D
 ```
 
 ## Usage examples
