@@ -6,7 +6,8 @@ install:
   - npm --version
 
   - npm install -g node-gyp
-  - npm install --build-from-source --msvs_version=2013
+  - npm install -g npm-install-retry
+  - npm-install-retry -- --build-from-source --msvs_version=2013
 
 test_script:
   - npm test
