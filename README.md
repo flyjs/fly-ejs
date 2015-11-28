@@ -9,6 +9,7 @@
 [![][fly-badge]][fly]
 [![npm package][npm-ver-link]][npm-pkg-link]
 [![][travis-badge]][travis-link]
+[![][appveyor-badge]][appveyor-link]
 [![][climate-badge]][climate-link]
 [![][david-badge]][david-link]
 [![][david-dev-badge]][david-dev-link]
@@ -45,6 +46,8 @@ Copyright (c) 2015 Pine Mizune
 [npm-ver-link]:    https://img.shields.io/npm/v/fly-ejs.svg?style=flat-square
 [travis-link]:     https://travis-ci.org/pine613/fly-ejs
 [travis-badge]:    http://img.shields.io/travis/pine613/fly-ejs.svg?style=flat-square
+[appveyor-link]:   https://ci.appveyor.com/project/pine613/fly-ejs/branch/master
+[appveyor-badge]:  https://img.shields.io/appveyor/ci/pine613/fly-ejs/master.svg?style=flat-square
 [david-link]:      https://david-dm.org/pine613/fly-ejs
 [david-badge]:     https://img.shields.io/david/pine613/fly-ejs.svg?style=flat-square
 [david-dev-link]:  https://david-dm.org/pine613/fly-ejs#info=devDependencies&view=table
