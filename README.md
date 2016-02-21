@@ -34,7 +34,7 @@ export default function* () {
 
 ## License
 MIT License<br />
-Copyright (c) 2015 Pine Mizune
+Copyright (c) 2015-2016 Pine Mizune
 
 [mit]:             http://opensource.org/licenses/MIT
 [author]:          https://github.com/pine613
