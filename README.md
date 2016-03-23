@@ -25,7 +25,7 @@ $ npm i fly-ejs -D
 ## Usage examples
 
 ```js
-export default function* () {
+exports.default = function* () {
   yield this.source('./**/*.ejs')
     .ejs({ key: 'value' })
     .target('./dist')
@@ -33,8 +33,7 @@ export default function* () {
 ```
 
 ## License
-MIT License<br />
-Copyright (c) 2015-2016 Pine Mizune
+MIT License
 
 [mit]:             http://opensource.org/licenses/MIT
 [author]:          https://github.com/pine613
