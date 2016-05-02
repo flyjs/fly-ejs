@@ -29,15 +29,15 @@
   "author": {
     "name": "Pine Mizune",
     "email": "pinemz@gmail.com",
-    "url": "https://github.com/pine613"
+    "url": "https://github.com/pine"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pine613/fly-ejs"
+    "url": "https://github.com/pine/fly-ejs"
   },
   "bugs": {
-    "url": "https://github.com/pine613/fly-ejs/issues"
+    "url": "https://github.com/pine/fly-ejs/issues"
   },
-  "homepage": "https://github.com/pine613/fly-ejs",
+  "homepage": "https://github.com/pine/fly-ejs",
   "license": "MIT"
 }
