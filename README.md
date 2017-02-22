@@ -4,7 +4,7 @@
   </a>
 </div>
 
-> [ejs](https://github.com/tj/ejs) plugin for _[Fly][fly]_.
+> [ejs](https://github.com/mde/ejs) plugin for _[Fly][fly]_.
 
 [![][fly-badge]][fly]
 [![npm package][npm-ver-link]][npm-pkg-link]
@@ -16,7 +16,7 @@
 
 
 ## Getting Started
-This plugin requires [fly](https://github.com/bucaran/fly).
+This plugin requires [fly](https://github.com/flyjs/fly).
 
 ```sh
 $ npm i fly-ejs -D
@@ -25,10 +25,12 @@ $ npm i fly-ejs -D
 ## Usage examples
 
 ```js
-exports.default = function* () {
-  yield this.source('./**/*.ejs')
-    .ejs({ key: 'value' })
-    .target('./dist')
+module.exports = {
+  *ejs(fly) {
+    yield fly.source('./**/*.ejs')
+      .ejs({ key: 'value' })
+      .target('./dist')
+  }
 }
 ```
 

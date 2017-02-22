@@ -1,8 +1,15 @@
 const ejs = require('ejs')
+const extname = require('path').extname
 
-module.exports = function () {
-  this.filter('ejs', (data, opts) => ({
-    css: ejs.render(data.toString(), opts),
-    ext: '.html'
-  }))
+module.exports = (fly) => {
+  fly.plugin('ejs', { every: true }, function* (file, opts) {
+    opts = opts || {}
+
+    const ext = extname(file.base)
+    file.base = file.base.replace(new RegExp(`${ext}$`, 'i'), '.html')
+
+    const out = ejs.render(file.data.toString(), opts)
+    file.data = typeof Buffer.from === 'function' ?
+      Buffer.from(out) : new Buffer(out)
+  })
 }

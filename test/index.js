@@ -1,40 +1,55 @@
-const expect = require('chai').expect
+const join = require('path').join
+
 const co = require('co')
-const fs = require('co-fs')
+const expect = require('chai').expect
+const Fly = require('fly')
+const fs = require('mz/fs')
+const tmp = require('tmp')
+
 const ejs = require('../')
 
 describe('index', () => {
-  it('# succeeded', done => {
-    co(function* () {
-      const data = yield fs.readFile(`${__dirname}/fixture/ok.ejs`)
-      const expected = yield fs.readFile(`${__dirname}/fixture/ok.html`)
+  it('# succeeded', (done) => {
+    tmp.dir((err, out) =>  {
+      if (err) { return done(err) }
 
-      ejs.call({
-        filter: function (name, transform) {
-          try {
-            const actual = transform(data, { title: 'fly-ejs' })
-            expect(name).to.equal('ejs')
-            expect(actual).to.deep.equal({ css: expected.toString(), ext: '.html' })
-            done()
-          }
-          catch (e) { done(e) }
-        }
+      const fly = new Fly({
+        plugins: [ ejs ],
+        tasks: {
+          *foo(f) {
+            yield f
+              .source(join(__dirname, 'fixture/ok.ejs'))
+              .ejs({ title: 'fly-ejs' })
+              .target(out)
+          },
+        },
       })
+
+      fly.start('foo')
+        .then(co.wrap(function* () {
+          const expected = yield fs.readFile(join(__dirname, 'fixture/ok.html'))
+          const actual = yield fs.readFile(join(out, 'ok.html'))
+          expect(actual).to.deep.equal(expected)
+          done()
+        }))
+        .catch(err => done(err))
     })
   })
 
-  it('# failed', done => {
-    ejs.call({
-      filter: function (name, transform) {
-        try {
-          const actual = transform('<%= invalid_variable %>', { title: 'fly-ejs' })
-          done('should be failed because ejs data is broken')
-        }
-        catch (e) {
-          console.log(e)
-          done()
-        }
-      }
+  it('# failed', (done) => {
+    const fly = new Fly({
+      plugins: [ ejs ],
+      tasks: {
+        *foo(f) {
+          yield f
+            .source(join(__dirname, 'fixture/ok.ejs'))
+            .ejs( /* arguments required! */ )
+        },
+      },
     })
+
+    fly.start('foo')
+      .then(() => done('should be failed because ejs data is broken'))
+      .catch(err => done())
   })
 })
