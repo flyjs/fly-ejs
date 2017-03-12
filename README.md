@@ -46,8 +46,8 @@ MIT License
 [npm-ver-link]:    https://img.shields.io/npm/v/fly-ejs.svg?style=flat-square
 [travis-link]:     https://travis-ci.org/flyjs/fly-ejs
 [travis-badge]:    http://img.shields.io/travis/flyjs/fly-ejs.svg?style=flat-square
-[appveyor-link]:   https://ci.appveyor.com/project/flyjs/fly-ejs/branch/master
-[appveyor-badge]:  https://img.shields.io/appveyor/ci/flyjs/fly-ejs/master.svg?style=flat-square
+[appveyor-link]:   https://ci.appveyor.com/project/pine/fly-ejs/branch/master
+[appveyor-badge]:  https://img.shields.io/appveyor/ci/pine/fly-ejs/master.svg?style=flat-square
 [david-link]:      https://david-dm.org/flyjs/fly-ejs
 [david-badge]:     https://img.shields.io/david/flyjs/fly-ejs.svg?style=flat-square
 [david-dev-link]:  https://david-dm.org/flyjs/fly-ejs#info=devDependencies&view=table
